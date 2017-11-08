@@ -1,0 +1,65 @@
+﻿
+<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ --><include file="Common/contact"/>
+<style type="text/css">
+    .page>div>a, .page>div>span {
+        position: relative;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #848399;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        top:27px;
+    }
+    .page>div>span {
+        background-color: #f2efef;
+    }
+</style>
+<include file="Common/header"/>
+<div class="main-content index-page clearfix ">
+    <div class="post-lists">
+        <div class="post-lists-body">
+            <foreach name="posts" item="vo">
+                <if condition="($vo['tag_id'] neq 8) and ($vo['tag_id'] neq 9) ">
+                <div class="post-list-item">
+                    <div class="post-list-item-container">
+                        <div class="item-thumb bg-deepgrey" style="background-image:url(__ROOT__/Uploads/posts/{$vo['image']});"></div>
+                        <a href="{:U('Index/show',array('id'=>$vo['id']))}">
+                            <div class="item-desc">
+                                {$vo.content}
+                            </div>
+                        </a>
+                        <div class="item-slant reverse-slant bg-deepgrey"></div>
+                        <div class="item-slant"></div>
+                        <div class="item-label">
+                            <div class="item-title">
+                                <a href="{:U('Index/show',array('id'=>$vo['id']))}">{$vo.title}</a></div>
+                            <div class="item-meta clearfix">
+                                <!--<div class="item-meta-ico bg-ico-code" style="background: url(__IMAGES__/bg-ico.png) no-repeat;background-size: 40px auto;"></div>-->
+                                <div class="item-meta-cat">
+                                    <a style="float: left;" href="{:U('Index/show',array('id'=>$vo['id']))}">查看全文</a><img src="__IMAGES__/i<?php echo rand(1,9);?>.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </if>
+            </foreach>
+        </div>
+    </div>
+    <div class="lists-navigator clearfix">
+        <ol class="page-navigator">
+            <div class="page page-navigator">{$page}</div>
+            <br>
+        </ol>
+    </div>
+</div>
+<include file="Common/footer"/>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+﻿<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ -->
+<include file="Common/contact"/>
+<include file="Common/header"/>
+<article class="main-content page-page">
+    <div class="post-header">
+        <h1 class="post-title" itemprop="name headline">About</h1>
+        <div class="post-data">
+            <time datetime="2016-01-28T14:07:00+08:00" itemprop="datePublished">Published on 2016-03-21</time></div>
+    </div>
+    <div id="post-content" class="post-content">
+        <h3>Hello,World</h3>
+        <p>我是 wilkins ，php工程师</p>
+        <h3>嗜好</h3>
+        <p>php linux Thinkphp js jq</p>
+        <p>可以通过博客页底的社交链接联系到我</p>
+        <ul>
+            <li>
+                <p>
+                    <a href="https://github.com/cbbtop" target="_blank">Github</a></p>
+            </li>
+        </ul>
+        <p>推荐使用邮箱联系···</p>
+        <p>cbbtop@163.com</p>
+    </div>
+</article>
+<include file="Common/footer"/>
+<script>(function() {
+    window.TypechoComment = {
+        dom: function(id) {
+            return document.getElementById(id);
+        },
+        create: function(tag, attr) {
+            var el = document.createElement(tag);
+            for (var key in attr) {
+                el.setAttribute(key, attr[key]);
+            }
+            return el;
+        },
+        reply: function(cid, coid) {
+            var comment = this.dom(cid),
+                parent = comment.parentNode,
+                response = this.dom('respond-page-2'),
+                input = this.dom('comment-parent'),
+                form = 'form' == response.tagName ? response: response.getElementsByTagName('form')[0],
+                textarea = response.getElementsByTagName('textarea')[0];
+            if (null == input) {
+                input = this.create('input' {
+                    'type': 'hidden',
+                        'name': 'parent',
+                        'id': 'comment-parent'
+                });
+                form.appendChild(input);
+            }
+            input.setAttribute('value', coid);
+            if (null == this.dom('comment-form-place-holder')) {
+                var holder = this.create('div' {
+                    'id': 'comment-form-place-holder'
+                });
+                response.parentNode.insertBefore(holder, response);
+            }
+            comment.appendChild(response);
+            this.dom('cancel-comment-reply-link').style.display = '';
+            if (null != textarea && 'text' == textarea.name) {
+                textarea.focus();
+            }
+            return false;
+        },
+        cancelReply: function() {
+            var response = this.dom('respond-page-2'),
+                holder = this.dom('comment-form-place-holder'),
+                input = this.dom('comment-parent');
+            if (null != input) {
+                input.parentNode.removeChild(input);
+            }
+            if (null == holder) {
+                return true;
+            }
+            this.dom('cancel-comment-reply-link').style.display = 'none';
+            holder.parentNode.insertBefore(response, holder);
+            return false;
+        }
+    };
+})();
+function getCommentCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;
+]*)(;
+|$)");
+    if (arr = document.cookie.match(reg)) return unescape(decodeURI(arr[2]));
+    else return null;
+}
+function addCommentInputValue() {
+    document.getElementById('author').value = getCommentCookie('6ee012733224975cc25c285033ecb4a3__typecho_remember_author');
+    document.getElementById('mail').value = getCommentCookie('6ee012733224975cc25c285033ecb4a3__typecho_remember_mail');
+    document.getElementById('url').value = getCommentCookie('6ee012733224975cc25c285033ecb4a3__typecho_remember_url');
+}
+addCommentInputValue();</script>
+</body>
+
+</html>

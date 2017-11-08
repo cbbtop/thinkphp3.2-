@@ -1,0 +1,51 @@
+<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ -->
+<footer id="footer" class="footer ">
+    <div class="footer-social">
+        <div class="footer-container clearfix">
+            <div class="social-list">
+                <a class="social weibo" target="blank" href="https://weibo.com/lauzexu">WEIBO</a>
+                <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/chakhsu/">ZHIHU</a>
+                <a class="social rss" target="blank" href="https://www.linpx.com/feed/">RSS</a>
+                <a class="social github" target="blank" href="https://github.com/chakhsu">GITHUB</a>
+                <a class="social twitter" target="blank" href="https://twitter.com/chakhsu_lau">TWITTER</a></div>
+        </div>
+    </div>
+    <div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="https://www.cbbtop.com/" class="info-logo">
+                        <img style="height: 20px;position: absolute;top: 30px;left: -150px;" src="__PICTURE__/cbbtop.png" alt="CBBTOP" /></a>
+                    <div class="info-text">
+                        <!--<p id="chakhsu"></p>-->
+                        <p>Copyright</p>
+                        <p>©2017
+                            <a href="https://www.cbbtop.com/">CBBTOP</a></p>
+                        <p>Design By Wilkins</p>
+                        <p>wilinks  版权所有</p>
+                        <p>粤ICP备17021590号-1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">最新文章 new</h3>
+                <foreach name="re_posts" item="vo">
+                    <li>
+                        <a href="{:U('Index/show',array('id'=>$vo['id']))}">{$vo['title']}</a></li>
+                </foreach>
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新留言</h3>
+                <foreach name="re_comments" item="vo">
+                    <li>
+                        <if condition="$vo['user_id'] != ''">{$vo['user_id']}<else />{$vo['name']}</if> : {$vo['content']}</li>
+                </foreach>
+            </div>
+        </div>
+    </div>
+</footer>

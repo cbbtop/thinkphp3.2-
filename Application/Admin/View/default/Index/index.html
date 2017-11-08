@@ -1,0 +1,92 @@
+﻿<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ -->
+<include file="Common/header"/>
+<include file="Common/header_one"/>
+<include file="Common/contact"/>
+	<!-- MAIN -->
+	<div class="main">
+		<!-- MAIN CONTENT -->
+		<div class="main-content">
+			<div class="container-fluid">
+
+				<div class="col-md-6">
+					<!-- BORDERED TABLE -->
+					<div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">CBBTOP</h3>
+						</div>
+						<div class="panel-body">
+							<table class="table table-bordered">
+								<tbody>
+								<tr>
+									<td colspan="2">博客网站基本信息</td>
+								</tr>
+								<tr>
+									<td>博客地址</td>
+									<td><a href="www.cbbtop.com">www.cbbtop.com</a></td>
+								</tr>
+								<tr>
+									<td>版本</td>
+									<td>cbbtop.v1</td>
+								</tr>
+								<tr>
+									<td>thinkphp版本</td>
+									<td>3.2.3</td>
+								</tr>
+								<tr>
+									<td>php版本</td>
+									<td>5.3.29</td>
+								</tr>
+								<tr>
+									<td>mysql版本</td>
+									<td>5.1</td>
+								</tr>
+								<tr>
+									<td>最后更新时间</td>
+									<td>2017-8-29</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- END BORDERED TABLE -->
+				</div>
+
+			</div>
+		</div>
+		<!-- END MAIN CONTENT -->
+	</div>
+	<!-- END MAIN -->
+	<div class="clearfix"></div>
+	<footer>
+		<div class="container-fluid">
+			<p class="copyright">&copy; 2017 <a href="#" target="_blank"></a>cbbtop个人博客<a href="www.cbbtop.com" target="_blank" title="cbbtop个人博客">cbbtop个人博客</a>cbbtop个人博客<a href="www.cbbtop.com" title="cbbtop个人博客" target="_blank">cbbtop个人博客</a></p>
+		</div>
+	</footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="__ASSETS__/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="__ASSETS__/js/layer/layer.js"></script>
+<script src="__ASSETS__/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="__ASSETS__/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="__ASSETS__/scripts/klorofil-common.js"></script>
+<script>
+    function house_add(){
+        layer.open({
+            title :'修改招聘信息',
+            type: 2,
+            area: ['700px', '280px'],
+            fixed: false, //不固定
+            maxmin: true,
+            content: ['join_edit.html','no']
+        });
+    }
+</script>
+</body>
+
+</html>

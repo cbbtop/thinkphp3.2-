@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+-->
+<body>
+<?php
+    if (!isset($_COOKIE['qq_accesstoken']) || !isset($_COOKIE['qq_openid'])){
+?>
+
+        <a href="{:U('Index/qqlogin')}">登录QQ</a>
+<?php
+    }else{
+?>
+        <a href="{:U('Index/qqlogout')}">退出QQ</a>
+<?php    }
+//        $qc = new QC($_COOKIE['qq_accesstoken'],$_COOKIE['qq_openid']);
+//        $userinfo = $qc->get_user_info();
+    ?>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ -->
+<include file="Common/contact"/>
+<include file="Common/header"/>
+<div class="main-content archive-page clearfix">
+    <div class="categorys-item">
+        <!--内容-->
+        <div class="categorys-title">Published on 2017</div>
+        <div class="post-lists">
+            <div class="post-lists-body">
+                <foreach name="posts2017" item="vo">
+                <div class="post-list-item">
+                    <div class="post-list-item-container">
+                        <div class="item-label">
+                            <div class="item-title">
+                                <a href="{:U('Index/show',array('id'=>$vo['id']))}">{$vo['title']}</a></div>
+                            <div class="item-meta clearfix">
+                                <div class="item-meta-date">{$vo['created_at']}</div></div>
+                        </div>
+                    </div>
+                </div>
+                </foreach>
+            </div>
+        </div>
+
+        <div class="categorys-title">Published on 2016</div>
+        <div class="post-lists">
+            <div class="post-lists-body">
+                <foreach name="posts2016" item="vo">
+                <div class="post-list-item">
+                    <div class="post-list-item-container">
+                        <div class="item-label">
+                            <div class="item-title">
+                                <a href="{:U('Index/show',array('id'=>$vo['id']))}">{$vo['title']}</a></div>
+                            <div class="item-meta clearfix">
+                                <div class="item-meta-date">{$vo['created_at']}</div></div>
+                        </div>
+                    </div>
+                </div>
+                </foreach>
+            </div>
+        </div>
+        <!--内容-->
+    </div>
+</div>
+<include file="Common/footer"/>
+</body>
+
+</html>

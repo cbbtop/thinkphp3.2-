@@ -1,0 +1,31 @@
+﻿<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ -->
+<include file="Common/contact"/>
+<include file="Common/header"/>
+<div class="main-content page-page">
+    <div class="search-page">
+        <form id="search" class="search-form" method="post" action="{:U('Index/search_list')}" role="search">
+          <span class="search-box clearfix">
+            <input type="text" id="input" class="input" name="search" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+            <button type="submit" class="spsubmit">
+              <i class="icon-search"></i>
+            </button>
+          </span>
+        </form>
+        <div class="search-tags">
+            <p>👇 The following tabs can help you!</p>
+            <foreach name="tags" item="vo">
+            <a href="{:U('Index/tag',array('id'=>$vo['id']))}" class=" bg-white"># {$vo['tag']}({$vo['count']})</a>
+            </foreach>
+            <div class="search-tags-hr bg-deepgrey"></div>
+        </div>
+    </div>
+</div>
+<include file="Common/footer"/>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!-- 
+wikins开源博客
+基于thinkphp3.2框架开发
+wilinks 版权所有
+博客地址：www.cbbtop.com
+ -->
+<include file="Common/header" />
+<link rel="stylesheet" type="text/css" href="__CSS__/noLogin.css"  />
+<include file="Common/header_one" />
+
+<div class="BodyContent">
+    <div class="container">
+        <div class="BodyContent1">
+            <img src="__IMG__/noLogin.png">
+        </div>
+        <div class="BodyContent2">
+            <h1>{$error}</h1>
+            <div>等待时间：<span id="wait"><?php echo($waitSecond); ?></span></div>
+            <div class="BackButton jumpUrl_href">返回</div>
+        </div>
+    </div>
+</div>
+<include file="Common/footer_one" />    
+<include file="Common/contact" />   
+<script type="text/javascript">
+$(function(){
+var wait = document.getElementById('wait'),href = "{$jumpUrl}";
+var interval = setInterval(function(){
+	var time = --wait.innerHTML;
+	if(time <= 0) {
+		location.href = href;
+		clearInterval(interval);
+	};
+}, 1000);
+	
+	$('.jumpUrl_href').click(function(){
+		location.href = href;
+	});
+});
+
+</script>    
+<include file="Common/footer" />
